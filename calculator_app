@@ -1,0 +1,37 @@
+num_1 = float(input("Enter first number: "))
+num_2 = float(input("Enter second number: "))  #Taking two nubers as input
+
+#variable 'cal' to store the type of calculation to perform
+cal = input("""Enter the calculation you want to perform
+e.g. Add(Addition), Sub(Subtraction), Mul(Multiplication), Div(Division): """)
+
+#addition function
+def add(num_1, num_2):
+  return num_1 + num_2
+
+#subtraction function
+def sub(num_1, num_2):
+  return num_1 - num_2
+
+#multiplication function
+def mul(num_1, num_2):
+  return num_1 * num_2
+
+#division function
+def div(num_1, num_2):
+  return num_1 / num_2
+
+if cal.lower() == "add":
+  print(f"The sum is {add(num_1, num_2)}")
+  
+elif cal.lower() == "sub":
+  print(f"The difference is {sub(num_1, num_2)}")
+  
+elif cal.lower() == "mul":
+  print(f"The product is {mul(num_1, num_2)}")
+  
+elif cal.lower() == "div":
+  if num_2 == 0:
+    print("ZeroDivisionError: Can not divide a number by zero") #error handling for division by zero error
+  else:
+    print(f"The division is {div(num_1, num_2)}")

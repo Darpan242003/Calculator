@@ -1,37 +1,55 @@
 num_1 = float(input("Enter first number: "))
-num_2 = float(input("Enter second number: "))  #Taking two nubers as input
+num_2 = float(input("Enter second number: "))  # Taking two nubers as input
 
-#variable 'cal' to store the type of calculation to perform
+# variable 'cal' to store the type of calculation to perform
 cal = input("""Enter the calculation you want to perform
-e.g. Add(Addition), Sub(Subtraction), Mul(Multiplication), Div(Division): """)
+e.g. Add(Addition), Sub(Subtraction), Mul(Multiplication), Div(Division), Exp(Exponential) and All(For all calculations simultaniously): """)
 
-#addition function
+# addition function
 def add(num_1, num_2):
-  return num_1 + num_2
+    return num_1 + num_2
 
-#subtraction function
+# subtraction function
 def sub(num_1, num_2):
-  return num_1 - num_2
+    return num_1 - num_2
 
-#multiplication function
+# multiplication function
 def mul(num_1, num_2):
-  return num_1 * num_2
+    return num_1 * num_2
 
-#division function
+# division function
 def div(num_1, num_2):
-  return num_1 / num_2
+    return num_1 / num_2
+
+# exponentiation function
+def exp(num_1, num_2):
+    return num_1 ** num_2
 
 if cal.lower() == "add":
-  print(f"The sum is {add(num_1, num_2)}")
-  
+    print(f"The sum is {add(num_1, num_2)}")
+
 elif cal.lower() == "sub":
-  print(f"The difference is {sub(num_1, num_2)}")
-  
+    print(f"The difference is {sub(num_1, num_2)}")
+
 elif cal.lower() == "mul":
-  print(f"The product is {mul(num_1, num_2)}")
-  
+    print(f"The product is {mul(num_1, num_2)}")
+
 elif cal.lower() == "div":
-  if num_2 == 0:
-    print("ZeroDivisionError: Can not divide a number by zero") #error handling for division by zero error
-  else:
-    print(f"The division is {div(num_1, num_2)}")
+    if num_2 != 0:
+        print(f"Division: {div(num_1, num_2)}")
+    else:
+        print("ZeroDivisionError: Can not divide a number by zero") #error handling for division by zero error
+
+elif cal.lower() == "exp":
+    print(f"{num_1} raised to {num_2} is {exp(num_1, num_2)}")
+
+elif cal.lower() == "all":
+    print(f"Sum: {add(num_1, num_2)}")
+    print(f"Difference: {sub(num_1, num_2)}")
+    print(f"Product: {mul(num_1, num_2)}")
+    print(f"{num_1} raised to {num_2} is {exp(num_1, num_2)}")
+    if num_2 != 0:
+        print(f"Division: {div(num_1, num_2)}")
+    else:
+        print("ZeroDivisionError: Can not divide a number by zero")
+    
